@@ -325,6 +325,7 @@ class ArticleController extends AbstractRestController implements ClassResourceI
             $search->setSize(1000);
             $search->setScroll('1m');
         }
+        $search->setTrackTotalHits(true);
 
         $searchResult = $repository->findRaw($search);
         $result = [];
